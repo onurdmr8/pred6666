@@ -1,6 +1,5 @@
 import time
 import requests
-from colorama import Fore, Style
 import yfinance as yf
 from datetime import datetime, timedelta
 import pandas as pd
@@ -14,6 +13,7 @@ from xgboost import XGBRegressor
 from lightgbm import LGBMRegressor
 from sklearn.model_selection import cross_val_score
 import streamlit as st
+
 
 st.set_page_config(layout="wide", page_title="Dorecast")
 
