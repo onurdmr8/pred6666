@@ -161,7 +161,7 @@ def newthe(liste,end=end):
                 calculate_macd(data)
                 calculate_rsi(data)
                 calculate_EMA(data)
-                calculate_kdj(data)
+            
 
             def generate_signals(data):
                 data['Signal'] = data[['MACD Signal', 'KDJ Signal', 'RSI Signal', 'EMA Signal']].sum(axis=1)
