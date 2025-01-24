@@ -164,7 +164,7 @@ def newthe(liste,end=end):
             
 
             def generate_signals(data):
-                data['Signal'] = data[['MACD Signal', 'KDJ Signal', 'RSI Signal', 'EMA Signal']].sum(axis=1)
+                data['Signal'] = data[['MACD Signal', 'RSI Signal', 'EMA Signal']].sum(axis=1)
 
             # Teknik göstergeleri hesapla ve sinyalleri oluştur
             calculate_indicators(data)
@@ -182,7 +182,7 @@ def newthe(liste,end=end):
                 data_with_lags = create_lagged_features(data)
                 data_with_lags.dropna(inplace=True)
                 X = data_with_lags.drop(['Datetime', 'close', 'Signal Line', 'MACD Signal', 'RSI Signal',
-                                         'KDJ Signal', 'EMA Signal', 'Signal'], axis=1)
+                                          'EMA Signal', 'Signal'], axis=1)
                 y = data_with_lags['close']
                 X_train, X_test, y_train, y_test = X.iloc[:-süre], X.iloc[-süre:], y.iloc[:-süre], y.iloc[-süre:]
 
